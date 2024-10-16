@@ -1,0 +1,38 @@
+<odoo>
+    <record id="view_pack_products_wizard_form" model="ir.ui.view">
+        <field name="name">pack.products.wizard.form</field>
+        <field name="model">pack.products.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Pack Products">
+                <group>
+                    <field name="picking_type_id"/>
+                    <field name="owner_id"/>
+                    <field name="location_id"/>
+                    <field name="location_dest_id"/>
+                    <field name="package_name"/>
+                    <field name="set_ready"/>
+                    <field name="create_lots"/>
+                </group>
+                <field name="stock_move_data">
+                    <tree editable="bottom">
+                        <field name="product_id"/>
+                        <field name="qty_done"/>
+                        <field name="serial"/>
+                    </tree>
+                </field>
+                <footer>
+                    <button name="create_packed_picking" type="object" string="Create Picking" class="btn-primary"/>
+                    <button string="Cancel" class="btn-secondary" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_pack_products_wizard" model="ir.actions.act_window">
+        <field name="name">Pack Products</field>
+        <field name="res_model">pack.products.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="view_pack_products_wizard_form"/>
+        <field name="target">new</field>
+    </record>
+</odoo>

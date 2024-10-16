@@ -1,0 +1,7 @@
+<odoo>
+    <menuitem id="menu_inventory_pack_products"
+              name="Pack Products"
+              parent="stock.menu_stock_root"
+              action="action_pack_products_wizard"/>
+
+</odoo>

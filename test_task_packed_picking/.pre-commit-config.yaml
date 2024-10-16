@@ -1,0 +1,26 @@
+repos:
+  # General Pylint Hook (Use pylint directly from the standard pre-commit repo)
+  - repo: https://github.com/pre-commit/mirrors-pylint
+    rev: v3.0.0a5 # Use the latest stable tag for pylint
+    hooks:
+      - id: pylint
+
+  #  # OCA License Check (This is the correct URL for OCA hooks)
+  #  - repo: https://github.com/OCA/oca-git-hooks
+  #    rev: 1.0.0  # Use the latest stable version
+  #    hooks:
+  #      - id: oca-check-license
+
+  # Prettier Hook (From the official Pre-commit mirror)
+  - repo: https://github.com/pre-commit/mirrors-prettier
+    rev: v4.0.0-alpha.8 # Use the specific stable tag
+    hooks:
+      - id: prettier
+
+  # XML and Other Hooks (Standard pre-commit-hooks repository)
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v5.0.0 # Use the latest stable version
+    hooks:
+      - id: check-xml
+      - id: trailing-whitespace
+      - id: end-of-file-fixer
